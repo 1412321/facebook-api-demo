@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :uid
       t.string :avatar
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
