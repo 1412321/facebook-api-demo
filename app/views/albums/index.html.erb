@@ -1,3 +1,6 @@
+<%= link_to "#", class: "btn btn-primary center" do %>
+  <i class="fa fa-plus"></i> New album
+<% end %>
 <section id="blog" class="section blog">
   <div class="container">
     <div id="blogContent" class="section-content">
@@ -34,12 +37,12 @@
             <% else %>
               <p>No caption yet</p>
               <% end %>
+              <%= link_to new_album_image_path(album["id"]), class: "btn btn-primary" do %>
+              <i class="fa fa-plus"></i> New image
+              <% end %>
             </div>
           </div>
         </div>
-        <%= link_to "#", class: "btn btn-primary" do %>
-        Add new image
-        <% end %>
         <% end %>
         <% end %>
       </div>
