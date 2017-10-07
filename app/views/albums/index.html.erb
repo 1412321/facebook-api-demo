@@ -1,10 +1,48 @@
-<div class="row">
-  <% @albums.each do |album| %>
-  <% if album %>
-    <div class="col-md-3">
-      <%= image_tag album[:cover]["images"][0]["source"], class:"img-fluid" %>
-      <%= link_to album["name"], album["link"] %>
-    </div>    
-  <% end %>
-  <% end %>
-</div>
+<section id="blog" class="section blog">
+  <div class="container">
+    <div id="blogContent" class="section-content">
+      <div class="row">
+        <% @albums.first(2).each do |album| %>
+        <% if true %>
+        <div class="col-sm-6 col-md-4">
+          <div class="blog-post">
+            <header>
+              <h4 class="date"><%= I18n.t("abbr_month_names")[strtodate(album["created_time"]).month] %><hr><%= strtodate(album["created_time"]).year %></h4>
+              <div class="blog-element">
+                <% if album[:cover] %>
+                <%= image_tag album[:cover]["images"][0]["source"], class:"img-fluid" %>
+              <% else %>
+                <%= image_tag image_url("placeholder.png"), class:"img-fluid" %>
+                <% end %>
+              </div>
+            </header>
+            <div class="blog-content">
+              <h4>
+                <%= link_to album["name"], album["link"], target:"_blank" %>
+              </h4>
+              <div class="post-meta">
+                <span>By
+                  <%= link_to current_user.name, current_user.link, target:"_blank" %>
+                </span>
+                <span>
+                  <a href="#"><%= album[:comments].length %>
+                    Comments</a>
+                </span>
+              </div>
+              <% if album["cover_photo"] && album["cover_photo"]["name"] %>
+              <p><%= content_preview(album["cover_photo"]["name"]) %></p>
+            <% else %>
+              <p>No caption yet</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <%= link_to "#", class: "btn btn-primary" do %>
+        Add new image
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
