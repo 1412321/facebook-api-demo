@@ -1,9 +1,10 @@
 <div class="row">
-  <% @albums.first(4).
-  each do |album| %>
+  <% @albums.each do |album| %>
+  <% if album %>
     <div class="col-md-3">
-      <%= image_tag album[:cover]["images"][2]["source"], class:"img-fluid" %>
+      <%= image_tag album[:cover]["images"][0]["source"], class:"img-fluid" %>
       <%= link_to album["name"], album["link"] %>
-    </div>
+    </div>    
+  <% end %>
   <% end %>
 </div>

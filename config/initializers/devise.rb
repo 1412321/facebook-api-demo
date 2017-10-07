@@ -250,7 +250,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  permissions = 'email, user_photos'
+  permissions = 'email, publish_actions, user_photos'
   config.omniauth :facebook, ENV['FB_APP_ID'], ENV['FB_APP_SECRET'], scope: permissions, info_fields: 'email,name'
 
   # ==> Warden configuration

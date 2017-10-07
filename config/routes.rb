@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'albums', to: "albums#index"
+  resources :albums, only: [:index, :create, :new]
+    resources :images, only: [:new, :create]
 
   root 'static_pages#home'
 
