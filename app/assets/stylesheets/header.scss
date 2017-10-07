@@ -1,0 +1,29 @@
+.header-inner {
+  padding-top: 150px;
+  background-color: black;
+  background-image: image-url("background.jpg");
+  background-size: cover;
+  text-align: center;
+
+  .breadcrumb {
+    background-color: transparent;
+    color: rgba(254, 254, 255, 0.7);
+    a {
+      color: inherit;
+    }
+    i{
+      margin: 0 10px;
+    }
+  }
+}
+
+.my-title {
+  h1 {
+    font-size: 50px;
+    font-weight: 100;
+    letter-spacing: 20px;
+    text-transform: uppercase;
+    z-index: 100;
+  }
+  padding-bottom: 50px;
+}
