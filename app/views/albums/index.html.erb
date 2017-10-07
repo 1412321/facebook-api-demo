@@ -1,0 +1,9 @@
+<div class="row">
+  <% @albums.first(4).
+  each do |album| %>
+    <div class="col-md-3">
+      <%= image_tag album[:cover]["images"][2]["source"], class:"img-fluid" %>
+      <%= link_to album["name"], album["link"] %>
+    </div>
+  <% end %>
+</div>

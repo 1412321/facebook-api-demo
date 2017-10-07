@@ -8,8 +8,12 @@ class Facebook
       fbgraph(token).get_object(id, args, options, &block)
     end
 
-    def get_friends(user, token)
-      return fbgraph(token).get_connections("#{user.uid}", "friends")
+    def get_image(user, id)
+      return fbgraph(user.token).get_object(id, fields: 'images')
+    end
+
+    def get_albums(user)
+      return fbgraph(user.token).get_connections("#{user.uid}", "albums", fields: 'name,link,cover_photo')
     end
   end
 end

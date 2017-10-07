@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'friends', to: "friends#index"
+  get 'albums', to: "albums#index"
 
   root 'static_pages#home'
 
