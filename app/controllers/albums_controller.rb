@@ -17,6 +17,8 @@ class AlbumsController < ApplicationController
   end
   def create
     @album = Facebook.create_albums(current_user, params[:title])
-    @image = Facebook.create_image(current_user,@album["id"], params[:img])
+    params[:img].each do |img|
+      @image = Facebook.create_image(current_user, @album["id"], img)
+    end
   end
 end
