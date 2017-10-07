@@ -1,0 +1,10 @@
+<div class="row">
+  <% @albums.each do |album| %>
+  <% if album %>
+    <div class="col-md-3">
+      <%= image_tag album[:cover]["images"][0]["source"], class:"img-fluid" %>
+      <%= link_to album["name"], album["link"] %>
+    </div>    
+  <% end %>
+  <% end %>
+</div>

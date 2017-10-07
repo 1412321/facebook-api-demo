@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'friends', to: "friends#index"
+  resources :albums, only: [:index, :create, :new]
+    resources :images, only: [:new, :create]
 
   root 'static_pages#home'
 
