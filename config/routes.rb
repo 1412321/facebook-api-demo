@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'friends', to: "friends#index"
+
   root 'static_pages#home'
 
   devise_for :users, controllers: { omniauth_callbacks: 'auth/callbacks' }
