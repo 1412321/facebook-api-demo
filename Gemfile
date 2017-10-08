@@ -31,6 +31,7 @@ gem 'font-awesome-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'koala'
+gem 'mimemagic'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

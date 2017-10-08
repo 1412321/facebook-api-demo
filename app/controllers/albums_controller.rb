@@ -18,7 +18,12 @@ class AlbumsController < ApplicationController
   def create
     @album = Facebook.create_albums(current_user, params[:title])
     params[:img].each do |img|
-      @image = Facebook.create_image(current_user, @album["id"], img)
+      type = file_type(img)
+      if type.match(/image\/*/)
+        @image = Facebook.create_image(current_user, album_id, img)
+      elsif type.match(/video\/*/)
+        @image = Facebook.create_video(current_user, album_id, img)
+      end
     end
   end
 end

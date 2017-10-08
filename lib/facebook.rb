@@ -16,6 +16,10 @@ class Facebook
       fbgraph(user.token).put_picture(file, {}, id)
     end
 
+    def create_video(user,type, id, file)
+      fbgraph(user.token).put_video(file, type ,{}, id)
+    end
+
     def get_albums(user)
       return fbgraph(user.token).get_connections("#{user.uid}", "albums", fields: 'name,link,cover_photo,created_time')
     end

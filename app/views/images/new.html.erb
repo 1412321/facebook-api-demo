@@ -1,6 +1,6 @@
 <div class="row">
   <form action="/albums/<%= params[:album_id] %>/images" method="post" enctype="multipart/form-data">
-    <input type="file" class="form-control" name="img[]" multiple>
+    <input type="file" class="form-control" name="img[]" multiple accept="image/*">
     <input type="submit" class="btn btn-primary">
   </form>
 </div>
